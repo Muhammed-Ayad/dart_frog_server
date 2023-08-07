@@ -1,6 +1,1 @@
-POST  http://localhost:8080
-
-{
-    "userName":"Mohamed",
-    "age":25
-}
+GET   http://localhost:8080

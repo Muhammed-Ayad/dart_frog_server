@@ -1,4 +1,5 @@
 import 'package:dart_frog/dart_frog.dart';
+import 'package:first_backend/models/user.dart';
 /*
 Response onRequest(RequestContext context) {
   final request = context.request;
@@ -15,11 +16,13 @@ Response onRequest(RequestContext context) {
 */
 
 Future<Response> onRequest(RequestContext context) async {
-  final request = context.request;
+  // final request = context.request;
 
-  final body = await request.json();
-  
+  // final body = await request.json();
+  final newBody = {'name': 'Mohamed', 'age': 25};
+
+  const user = User(age: 25, name: 'Ahmed');
   return Response.json(
-    body: body,
+    body: [newBody, user.toJson()],
   );
 }
