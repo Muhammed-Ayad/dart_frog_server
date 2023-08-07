@@ -15,6 +15,7 @@ Response onRequest(RequestContext context) {
 }
 */
 
+/*
 Future<Response> onRequest(RequestContext context) async {
   // final request = context.request;
 
@@ -25,4 +26,11 @@ Future<Response> onRequest(RequestContext context) async {
   return Response.json(
     body: [newBody, user.toJson()],
   );
+}
+*/
+
+Future<Response> onRequest(RequestContext context) async {
+  final users = context.read<List<User>>();
+
+  return Response.json(body: users);
 }
